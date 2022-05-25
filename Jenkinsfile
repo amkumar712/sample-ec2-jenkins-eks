@@ -7,6 +7,7 @@ pipeline {
             steps {
                 echo 'Executing Gradle Version'
                 withGradle() {
+                    sh 'chmod +x ./gradlew'
                     sh './gradlew -v'
                 }
             }
