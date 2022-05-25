@@ -3,12 +3,12 @@ pipeline {
 
     stages {
 
-        stage('Gradle Version') {
+        stage('Build') {
             steps {
-                echo 'Executing Gradle Version'
+                echo 'Executing Gradle Build'
                 withGradle() {
                     sh 'chmod +x ./gradlew'
-                    sh './gradlew -v'
+                    sh './gradlew clean build'
                 }
             }
         }
